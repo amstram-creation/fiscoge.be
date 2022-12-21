@@ -1,0 +1,92 @@
+a{color:#931010; text-decoration:none; border-bottom:1px solid #931010;}
+
+
+header h1{
+  font-size:1.3rem;
+  color:rgba(121,121,121,1);
+}
+header h2{
+  font-size:0.8rem;
+  color:rgba(181, 181, 181, 1);
+}
+header strong{
+  color:#931010;
+  font-weight:normal;
+}
+
+@media (min-width: 400px){header h2{font-size:0.9rem;}}
+@media (min-width: 500px){header h2{font-size:1rem;}}
+@media (min-width: 500px){
+  header h1{font-size:1.5rem;}
+  header h2{font-size:1.2rem;}
+}
+
+header img{
+  min-width:50px
+}
+
+h3{
+  margin:2em 0 1em;
+}
+
+.list-group-item-action{
+  padding-left:0;
+}
+
+.logos{
+  text-align:center;
+  margin-top:3em;
+}
+
+img#oeccbb{
+  width:300px;
+  height:97px;
+}
+
+img#iret{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+}
+
+body{padding-bottom:1.5em;}
+
+.share-links{
+  background-color:white;
+  position:fixed;
+  bottom:0em;
+  text-align:center;
+  width:100%;
+}
+.share-links a{
+  border:none;
+  margin:1rem 0.5rem;
+}
+
+.attribute-icons a{
+  font-size:0.5rem;
+  color:gray;
+  border:none;
+}
+
+#RGPD-modal{
+  background-color:rgba(0,0,0,0.5);
+}
+.modal-body .intro{
+  font-size:1.2rem;
+}
+.modal-body h4{
+  font-size:1.2em;
+  margin:2em 0em 1em;
+}
+
+.modal-dialog{
+  max-width:64em;
+}
+address strong{
+  display:block;
+}
+
+footer{
+  text-align:center;
+}
