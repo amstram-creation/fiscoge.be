@@ -25,7 +25,7 @@ if(!isset($_SESSION['username']))
 
     <?php
 
-    $files = ['intro', 'address', 'coordonnees', 'links', 'rgpd_intro', 'rgpd'];
+    $files = ['intro', 'adresse', 'coordonnees', 'liens', 'RGPD-intro', 'RGPD'];
 
     echo '<ul class="nav nav-tabs" id="myTab" role="tablist">';
     foreach($files as $i => $file)

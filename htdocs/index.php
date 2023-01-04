@@ -60,15 +60,15 @@
         <div class="col-md-6">
           <h3>Coordonnées</h3>
           <?php echo file_get_contents('content/coordonnees.html');?>
-          <?php echo file_get_contents('content/address.html');?>
+          <?php echo file_get_contents('content/adresse.html');?>
         </div>
         <div class="col-md-6">
-          <?php echo file_get_contents('content/rgpd_intro.html');?>
+          <?php echo file_get_contents('content/RGPD-intro.html');?>
         </div>
         <div class="col-12">
           <h3>Liens utiles</h3>
           <div class="list-group list-group-flush ">
-            <?php echo file_get_contents('content/links.html');?>
+            <?php echo file_get_contents('content/liens.html');?>
           </div>
         </div>
     </section>
@@ -92,7 +92,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <?php echo file_get_contents('content/rgpd.html');?>
+        <?php echo file_get_contents('content/RGPD.html');?>
 
       </div>
 
