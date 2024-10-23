@@ -28,38 +28,37 @@ if(!isset($_SESSION['username']))
     $files = ['intro', 'adresse', 'coordonnees', 'liens', 'RGPD-intro', 'RGPD'];
 
     echo '<ul class="nav nav-tabs" id="myTab" role="tablist">';
+    $btn_class = 'active'; // active the first link
+
     foreach($files as $i => $file)
     {
-      $class ='';
-      if($i==0){
-        $class = 'active';
-      }
-
       echo '
-        <li class="nav-item" role="presentation">
-          <button class="nav-link '.$class.'" id="'.$file.'-tab" data-bs-toggle="tab" data-bs-target="#'.$file.'-tab-pane" type="button" role="tab" aria-controls="'.$file.'-tab-pane" aria-selected="true">'.ucfirst($file).'</button>
-        </li>';
+      <li class="nav-item" role="presentation">
+      <button class="nav-link '.$btn_class.'" id="'.$file.'-tab" data-bs-toggle="tab" data-bs-target="#'.$file.'-tab-pane" type="button" role="tab" aria-controls="'.$file.'-tab-pane" aria-selected="true">'.ucfirst($file).'</button>
+      </li>';
+      $btn_class ='';
     }
 
     echo '</ul>';
 
     echo '<div class="tab-content" id="'.$file.'">';
+    $filepath_pattern = '../content/%s.html';
+
+    $tab_class = 'show active'; // activate and show the first tab
     foreach($files as $i => $file)
     {
-      $filename = '../content/'.$file.'.html';
-      $class ='';
-      if($i==0){
-        $class = 'show active';
-      }
-
+      $filename = sprintf($filepath_pattern, $file);
+      
       echo '
-        <div class="tab-pane fade '.$class.'" id="'.$file.'-tab-pane" role="tabpanel" aria-labelledby="'.$file.'-tab" tabindex="0">
-          <form class="mt-2" action="./submit.php" method="post">
-            <input type="hidden" name="filename" value="'.$filename.'" />
-            <textarea class="form-control" name="content" rows="10">'.file_get_contents($filename).'</textarea>
-            <button class="btn btn-primary mt-4" type="submit">Enregistrer</button>
-          </form>
-        </div>';
+      <div class="tab-pane fade '.$tab_class.'" id="'.$file.'-tab-pane" role="tabpanel" aria-labelledby="'.$file.'-tab" tabindex="0">
+      <form class="mt-2" action="./submit.php" method="post">
+      <input type="hidden" name="filename" value="'.$filename.'" />
+      <textarea class="form-control" name="content" rows="10">'.file_get_contents($filename).'</textarea>
+      <button class="btn btn-primary mt-4" type="submit">Enregistrer</button>
+      </form>
+      </div>';
+
+      $tab_class = ''; // only for first loop
     }
     echo '</div>';
 
