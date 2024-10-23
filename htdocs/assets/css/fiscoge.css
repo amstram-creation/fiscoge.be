@@ -151,16 +151,27 @@ section#intro {
   }
 }
 
+
 section nav {
   display: flex;
   flex-direction: column;
 }
 
+section nav ul{
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+}
+
+section nav ul li{
+  margin-bottom: 0.3rem;
+}
+
 section nav a {
+  display: block;
   color: var(--color-sec);
   border-color: var(--color-ter-light);
   padding: 0.3rem 0;
-  margin-bottom: 0.3rem;
 }
 
 address strong {
