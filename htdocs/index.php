@@ -1,12 +1,12 @@
 <?php
 header('Cache-Control: max-age=31536000');
-header('Expires: Wed, 09 May '.(intval(date('Y'))+1).' 12:00:00 GMT');
+header('Expires: Wed, 09 May ' . (intval(date('Y')) + 1) . ' 12:00:00 GMT');
 $nonce = bin2hex(random_bytes(16));
 $headers = [
   "base-uri 'self'",
   "default-src 'self';",
   "script-src 'self' 'nonce-{$nonce}' 'unsafe-inline'",
-  "style-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'nonce-{$nonce}' 'unsafe-inline'",
   "connect-src 'self' 'nonce-{$nonce}'",
   "img-src 'self' 'nonce-{$nonce}'",
   "frame-src 'self' 'nonce-{$nonce}'",
@@ -43,8 +43,10 @@ foreach ($headers as $key => $header)
   <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
   <link rel="icon" href="/assets/img/favicons/favicon.ico">
 
+  <link rel="canonical" href="https://fiscoge.be" />
+
   <!-- Custom styles for this template -->
-  <style>
+  <style nonce="<?= $nonce ?>">
     <?php echo file_get_contents('assets/css/fiscoge.css'); ?>
   </style>
 </head>
